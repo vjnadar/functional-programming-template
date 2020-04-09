@@ -21,7 +21,6 @@ server.use(function (error, req, res, next) {
     console.log(error);
     var statusCode = error.statusCode || 500;
     var message = error.message || "Server error";
-    var data = error.data || error;
-    res.status(statusCode).json({ message: message, data: data });
+    res.status(statusCode).json({ message: message, statusCode: statusCode });
 });
 server.listen(8080);

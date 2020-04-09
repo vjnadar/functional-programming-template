@@ -1,14 +1,12 @@
-import { MongoClient } from "mongodb";
+import { MongoClient, Db } from "mongodb";
 
-async function getDbAccess() {
+async function getDbAccess(): Promise<Db> {
   const url: string = process.env.MONGODB_URL || "";
   const client = new MongoClient(url, { useUnifiedTopology: true });
-  let dbAcesss;
   if (!client.isConnected()) {
     await client.connect();
-    dbAcesss = client.db();
-    return dbAcesss;
+    return client.db();
   }
-  return dbAcesss;
+  return client.db();
 }
 export default getDbAccess;

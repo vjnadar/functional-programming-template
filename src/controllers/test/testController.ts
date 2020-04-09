@@ -11,7 +11,7 @@ function testController() {
       let fromDb = await fetchTestMessage();
       const response: ResponseFromService = {
         status: 200,
-        message: "Test successful",
+        message: "Test fetch successful",
         fromDb,
       };
       return response;
@@ -29,7 +29,7 @@ function testController() {
       let fromDb = await addTestMessage();
       const response: ResponseFromService = {
         status: 201,
-        message: "Test successful",
+        message: "Test post inserted successfully",
         fromDb: { insertedId: fromDb.insertedId },
       };
       return response;

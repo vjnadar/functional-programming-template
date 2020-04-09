@@ -4,13 +4,13 @@ import { DbAccess } from "../../types/dao/dbAccess";
 
 function testServices(dbAccess: DbAccess) {
   async function fetchTestMessage() {
-    let testDao = await createTestDao(dbAccess);
-    let result = await testDao.getTestMessage();
+    let {getTestMessage} = await createTestDao(dbAccess);
+    let result = await getTestMessage();
     return result;
   }
   async function addTestMessage() {
-    let testDao = await createTestDao(dbAccess);
-    let result = await testDao.postTestMessage();
+    let {postTestMessage} = await createTestDao(dbAccess);
+    let result = await postTestMessage();
     return result;
   }
   return Object.freeze({

@@ -1,5 +1,5 @@
 <div align="left">
-    <h1>Douglas Crockford's object creation pattern(Functional Programming)</h1>
+    <h1>Douglas Crockford's object creation pattern (Functional Programming)</h1>
 </div>
 
 **Technology stack**

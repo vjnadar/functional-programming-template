@@ -7,6 +7,7 @@
 2. Type Script
 3. Node JS
 4. Express JS
+5. MongoDB
 
 **Boilerplate code features**
 1. Douglas Crockford's object creation pattern

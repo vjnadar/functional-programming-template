@@ -1,5 +1,5 @@
 <div align="left">
-    <h1>Douglas Crockford's object creation pattern (Functional Programming)</h1>
+    <h1>Functional Programming template code using Douglas Crockford's object creation pattern.</h1>
 </div>
 
 **Technology stack**
@@ -7,6 +7,7 @@
 2. Type Script
 3. Node JS
 4. Express JS
+5. MongoDB
 
 **Boilerplate code features**
 1. Douglas Crockford's object creation pattern

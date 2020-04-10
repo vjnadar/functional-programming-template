@@ -22,4 +22,7 @@ server.use(
     res.status(statusCode).json({ message, statusCode });
   }
 );
-server.listen(8080);
+const _server = server.listen(8080, () => {
+  console.log("Connected");
+});
+module.exports = _server;

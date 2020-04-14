@@ -16,12 +16,7 @@ function testController() {
       };
       return response;
     }
-    const errorHolder: ErrorHolder = {
-      type: errorTypes.generalError,
-      message: "The record was not found",
-      statusCode: 401,
-    };
-    return controller(handler, errorHolder);
+    return controller(handler);
   }
 
   function post() {
@@ -34,10 +29,7 @@ function testController() {
       };
       return response;
     }
-    const errorHolder: ErrorHolder = {
-      type: errorTypes.insertOne,
-    };
-    return controller(handler, errorHolder);
+    return controller(handler);
   }
   return Object.freeze({
     get,

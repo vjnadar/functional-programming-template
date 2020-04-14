@@ -17,7 +17,7 @@ function testServices(dbAccess: DbAccess) {
     errorHandlers.throwError(errorHolder, result);
     return result;
   }
-  
+
   async function addTestMessage() {
     let { postTestMessage } = await createTestDao(dbAccess);
     let result = await postTestMessage();

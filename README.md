@@ -12,4 +12,4 @@
 **Boilerplate code features**
 1. Douglas Crockford's object creation pattern
 2. Three tier architecture
-3. Function programming
+3. Functional programming

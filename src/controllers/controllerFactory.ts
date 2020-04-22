@@ -1,10 +1,5 @@
 import { Request, Response, NextFunction, RequestHandler } from "express";
-import {
-  ControllerFactoryHandler,
-  ResponseFromService,
-} from "../types/controllers/controllersFactory";
-import { ErrorHolder } from "../types/errorHandlers/errorHandlers";
-import { errorHandlers } from "../utilities/errorHandler/errorHandlers";
+import { ControllerFactoryHandler, ResponseFromService } from "../types";
 
 function controllerFactory(handler: ControllerFactoryHandler): RequestHandler {
   return async function (req: Request, res: Response, next: NextFunction) {

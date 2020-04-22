@@ -4,7 +4,7 @@
   "description": "Template code using functional programming paradigm",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll --verbose --detectOpenHandles --coverage",
     "start:build": "tsc -w",
     "start:run": "nodemon build/server.js",
     "start": " concurrently npm:start:*"

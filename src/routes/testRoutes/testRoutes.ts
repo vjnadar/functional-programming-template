@@ -1,5 +1,5 @@
 import express, { Router } from "express";
-import { httpRequestTypes } from "../../types/httpRequestTypes/httpRequestTypes";
+import { httpRequestTypes } from "../../enums/httpRequestTypes/httpRequestTypes";
 import RouterSingleton from "../RouterSingleton";
 import testController from "../../controllers/test/testController";
 const testRouter = RouterSingleton.getRouter();

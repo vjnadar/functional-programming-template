@@ -1,35 +1,33 @@
 import { createTestDao } from "../../dao/test/testDao";
-import { MongoClient, Db } from "mongodb";
-import { DbAccess } from "../../types/dao/dbAccess";
-import { ErrorHolder } from "../../types/errorHandlers/errorHandlers";
+import { InsertOneWriteOpResult } from "mongodb";
+import { DbAccess, ErrorHolder, TestServices } from "../../types/";
 import { errorTypes } from "../../enums/errorTypes/errorTypes";
 import { errorHandlers } from "../../utilities/errorHandler/errorHandlers";
 
-function testServices(dbAccess: DbAccess) {
-  async function fetchTestMessage() {
+function testServices(dbAccess: DbAccess): TestServices {
+  async function fetchTestMessageService(): Promise<any> {
     let { getTestMessage } = await createTestDao(dbAccess);
     let result = await getTestMessage();
     const errorHolder: ErrorHolder = {
-      type: errorTypes.generalError,
+      type: errorTypes.GENERAL_ERROR,
       message: "The record was not found",
       statusCode: 401,
     };
     errorHandlers.throwError(errorHolder, result);
     return result;
   }
-
-  async function addTestMessage() {
+  async function addTestMessageService(): Promise<InsertOneWriteOpResult<any>> {
     let { postTestMessage } = await createTestDao(dbAccess);
     let result = await postTestMessage();
     const errorHolder: ErrorHolder = {
-      type: errorTypes.insertOne,
+      type: errorTypes.INSERT_ONE,
     };
     errorHandlers.throwError(errorHolder, result);
     return result;
   }
   return Object.freeze({
-    fetchTestMessage,
-    addTestMessage,
+    fetchTestMessageService,
+    addTestMessageService,
   });
 }
 export default testServices;

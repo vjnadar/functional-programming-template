@@ -1,8 +1,8 @@
 export enum errorTypes {
-  generalError = "GENERAL_ERROR",
-  generalErrorInverse = "GENERAL_ERROR_INVERSE",
-  findOne = "FIND_ONE",
-  insertOne = "INSERT_ONE",
-  updateOne = "UPDATE_ONE",
-  deleteOne = "DELETE_ONE",
+  GENERAL_ERROR = "GENERAL_ERROR",
+  GENERAL_ERROR_INVERSE = "GENERAL_ERROR_INVERSE",
+  FIND_ONE = "FIND_ONE",
+  INSERT_ONE = "INSERT_ONE",
+  UPDATE_ONE = "UPDATE_ONE",
+  DELETE_ONE = "DELETE_ONE",
 }

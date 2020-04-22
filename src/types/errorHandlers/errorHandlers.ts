@@ -1,12 +1,9 @@
+export interface ErrorCustom extends Error {
+  statusCode?: number;
+}
 export interface ErrorHolder {
   type: string;
   message?: string;
-  statusCode?: number;
-}
-export interface ThrowError {
-  (errorHolder: ErrorHolder, response: Object): void;
-}
-export interface ErrorCustom extends Error {
   statusCode?: number;
 }
 export interface ResponseFromDb {
@@ -17,3 +14,8 @@ export interface ResponseFromDb {
   name?: string;
   insertedId?: string;
 }
+
+export interface ThrowError {
+  (errorHolder: ErrorHolder, response: Object): void;
+}
+

@@ -7,7 +7,7 @@ import { ResponseFromDb } from "../../types/errorHandlers/errorHandlers";
 
 function throwError(errorHolder: ErrorHolder, response: ResponseFromDb): void {
   switch (errorHolder.type) {
-    case errorTypes.generalError: {
+    case errorTypes.GENERAL_ERROR: {
       if (!response) {
         let error: ErrorCustom = createError(
           errorHolder.message,
@@ -17,7 +17,7 @@ function throwError(errorHolder: ErrorHolder, response: ResponseFromDb): void {
       }
       break;
     }
-    case errorTypes.generalErrorInverse: {
+    case errorTypes.GENERAL_ERROR_INVERSE: {
       if (response) {
         let error: ErrorCustom = createError(
           errorHolder.message,
@@ -28,7 +28,7 @@ function throwError(errorHolder: ErrorHolder, response: ResponseFromDb): void {
       }
       break;
     }
-    case errorTypes.insertOne: {
+    case errorTypes.INSERT_ONE: {
       if (
         response.insertedCount !== undefined &&
         response.insertedCount !== 1
@@ -49,7 +49,7 @@ function throwError(errorHolder: ErrorHolder, response: ResponseFromDb): void {
       }
       break;
     }
-    case errorTypes.updateOne: {
+    case errorTypes.UPDATE_ONE: {
       if (
         response.modifiedCount !== undefined &&
         response.modifiedCount !== 1 &&
@@ -69,7 +69,7 @@ function throwError(errorHolder: ErrorHolder, response: ResponseFromDb): void {
       }
       break;
     }
-    case errorTypes.deleteOne: {
+    case errorTypes.DELETE_ONE: {
       if (response.deletedCount !== undefined && response.deletedCount !== 1) {
         let error: ErrorCustom = createError(
           "The deletion operation failed.",
@@ -90,7 +90,6 @@ function throwError(errorHolder: ErrorHolder, response: ResponseFromDb): void {
     }
   }
 }
-
 function createError(
   message: string | undefined,
   statusCode: number | undefined

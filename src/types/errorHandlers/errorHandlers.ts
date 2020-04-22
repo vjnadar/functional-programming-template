@@ -14,8 +14,6 @@ export interface ResponseFromDb {
   name?: string;
   insertedId?: string;
 }
-
 export interface ThrowError {
   (errorHolder: ErrorHolder, response: Object): void;
 }
-

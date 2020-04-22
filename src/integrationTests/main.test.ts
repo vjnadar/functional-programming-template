@@ -11,7 +11,7 @@ describe("main route test", () => {
     server.close();
   });
   describe("Test service", () => {
-    it("should check the response coming from /main/test(POST)", async (done) => {
+    it("should check the response coming from /main/test", async (done) => {
       let postRes = await request(server).post("/test");
       expect(postRes.status).toBe(201);
       let getRes = await request(server).get("/test");

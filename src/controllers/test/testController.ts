@@ -4,7 +4,7 @@ import {
   addTestMessageService,
   fetchTestMessageService,
 } from "../../services/test";
-import { ResponseFromService } from "../../types/controllers/controllersFactory";
+import { ResponseFromService } from "../../types";
 
 function testController() {
   function get() {

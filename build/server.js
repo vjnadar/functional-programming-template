@@ -23,7 +23,5 @@ server.use(function (error, req, res, next) {
     var message = error.message || "Server error";
     res.status(statusCode).json({ message: message, statusCode: statusCode });
 });
-var _server = server.listen(8080, function () {
-    console.log("Connected");
-});
+var _server = server.listen(8080);
 module.exports = _server;

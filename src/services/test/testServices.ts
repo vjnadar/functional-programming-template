@@ -6,7 +6,7 @@ import { errorHandlers } from "../../utilities/errorHandler/errorHandlers";
 
 function testServices(dbAccess: DbAccess): TestServices {
   async function fetchTestMessageService(): Promise<any> {
-    let { getTestMessage } = await createTestDao(dbAccess);
+    let { get:getTestMessage } = await createTestDao(dbAccess);
     let result = await getTestMessage();
     const errorHolder: ErrorHolder = {
       type: errorTypes.GENERAL_ERROR,
@@ -17,7 +17,7 @@ function testServices(dbAccess: DbAccess): TestServices {
     return result;
   }
   async function addTestMessageService(): Promise<InsertOneWriteOpResult<any>> {
-    let { postTestMessage } = await createTestDao(dbAccess);
+    let { post:postTestMessage } = await createTestDao(dbAccess);
     let result = await postTestMessage();
     const errorHolder: ErrorHolder = {
       type: errorTypes.INSERT_ONE,
